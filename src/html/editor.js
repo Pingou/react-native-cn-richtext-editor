@@ -17,6 +17,7 @@ const editorHTML = `
             height: 100%;
             margin: 0;
             padding: 2px;
+            color:#555;
         }
         code { 
             font-family: monospace;
