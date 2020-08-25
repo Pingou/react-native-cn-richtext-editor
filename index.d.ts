@@ -8,21 +8,37 @@ export interface CNRichTextEditorProps {
   onSelectedStyleChanged?: (styles: string[]) => void;
   onValueChanged?: (value: object[]) => void;
   onRemoveImage?: (url: string, id: string) => void;
-  value: ReturnType<typeof getInitialObject>;
+  value?: ReturnType<typeof getInitialObject>;
   styleList: any;
   ImageComponent?: React.ReactElement<any, any>;
   style?: StyleProp<ViewStyle>;
   contentContainerStyle?: StyleProp<ViewStyle>;
   onFocus?: () => void;
   onBlur?: () => void;
-  placeholder: string;
+  placeholder?: string;
+  textInputStyle?: StyleProp<TextStyle>;
+}
+
+export interface CNEditorProps {
+  onSelectedTagChanged?: (tag: string) => void;
+  onSelectedStyleChanged?: (styles: string[]) => void;
+  onRemoveImage?: (url: string, id: string) => void;
+  onValueChanged?: (value: string) => void;
+  initialHtml?: ReturnType<typeof getInitialObject>;
+  styleList: any;
+  style?: StyleProp<ViewStyle>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  placeholder?: string;
   textInputStyle?: StyleProp<TextStyle>;
 }
 
 export default class CNRichTextEditor extends Component<CNRichTextEditorProps> {
   applyToolbar(toolType: any): void;
-  insertImage(uri: any, id?: any, height?: number, width?: number): void;
+  insertImage(uri: any, id?: any, height?: number, width?: number, alt?: string, align?: string): void;
   focus(): void;
+  blur(): void;
 }
 
 export interface CNToolbarProps {

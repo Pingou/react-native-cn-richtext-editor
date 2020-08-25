@@ -1,12 +1,49 @@
 {
-  "name": "react-native-cn-richtext-editor",
-  "version": "1.0.42",
-  "description": "RichText Editor for React-Native",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src"
+  "_from": "react-native-cn-richtext-editor@next",
+  "_id": "react-native-cn-richtext-editor@2.0.0-rc3",
+  "_inBundle": false,
+  "_integrity": "sha512-dsikJrVHwo9JJUIYXLWYfTuOKHMLQY4nibinijd0TqYmxe63u4ZrtPDB6fg5G04NFOEn6TgzpvGkCIh1VYjUoA==",
+  "_location": "/react-native-cn-richtext-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-cn-richtext-editor@next",
+    "name": "react-native-cn-richtext-editor",
+    "escapedName": "react-native-cn-richtext-editor",
+    "rawSpec": "next",
+    "saveSpec": null,
+    "fetchSpec": "next"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-cn-richtext-editor/-/react-native-cn-richtext-editor-2.0.0-rc3.tgz",
+  "_shasum": "e92412fed0d60e283904e73b23d96dbea1b6ec59",
+  "_spec": "react-native-cn-richtext-editor@next",
+  "_where": "/Users/pingou/react/row_counter_watch",
+  "author": {
+    "name": "Narbe HS",
+    "email": "imnapo@gmail.com",
+    "url": "http://learncode.net"
+  },
+  "bugs": {
+    "url": "https://github.com/imnapo/react-native-cn-richtext-editor/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Christ Kho",
+      "email": "christ.khodabakhshi@gmail.com",
+      "url": "http://learncode.net"
+    },
+    {
+      "name": "Narbe HS",
+      "email": "imnapo@gmail.com",
+      "url": "http://learncode.net"
+    }
+  ],
   "dependencies": {
     "diff-match-patch": "^1.0.4",
     "immutability-helper": "^2.8.1",
@@ -14,30 +51,8 @@
     "shortid": "^2.2.14",
     "xmldom": "^0.1.27"
   },
-  "peerDependencies": {
-    "react": "^16.6.1",
-    "react-native": "^0.57.5"
-  },
-  "keywords": [
-    "react",
-    "react-native",
-    "rich-text",
-    "editor"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imnapo/react-native-cn-richtext-editor.git"
-  },
-  "contributors": [
-    "Christ Kho <christ.khodabakhshi@gmail.com> (http://learncode.net)",
-    "Narbe HS <imnapo@gmail.com> (http://learncode.net)"
-  ],
-  "author": "Narbe HS <imnapo@gmail.com> (http://learncode.net)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/imnapo/react-native-cn-richtext-editor/issues"
-  },
-  "homepage": "https://github.com/imnapo/react-native-cn-richtext-editor#readme",
+  "deprecated": false,
+  "description": "RichText Editor for React-Native",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
@@ -48,5 +63,29 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4"
-  }
+  },
+  "homepage": "https://github.com/imnapo/react-native-cn-richtext-editor#readme",
+  "keywords": [
+    "react",
+    "react-native",
+    "rich-text",
+    "editor"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-cn-richtext-editor",
+  "peerDependencies": {
+    "react": "^16.6.1",
+    "react-native": "^0.57.5",
+    "react-native-webview": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imnapo/react-native-cn-richtext-editor.git"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.0-rc3"
 }

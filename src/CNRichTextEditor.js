@@ -553,6 +553,7 @@ class CNRichTextEditor extends Component {
     }
 
     render() {
+
       const {
         value, style, contentContainerStyle, measureInputScroll = true,
       } = this.props;
