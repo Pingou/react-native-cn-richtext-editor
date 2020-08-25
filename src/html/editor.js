@@ -16,8 +16,8 @@ const editorHTML = `
             flex-direction: column;
             height: 100%;
             margin: 0;
-            padding: 2px;
-            color:#555;
+            padding: 8px;
+            color:#858585;
         }
         code { 
             font-family: monospace;
