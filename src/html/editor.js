@@ -17,7 +17,7 @@ const editorHTML = `
             height: 100%;
             margin: 0;
             padding: 8px;
-            color:#858585;
+            color:#555;
         }
         code { 
             font-family: monospace;
@@ -54,7 +54,7 @@ const editorHTML = `
     <title>CN-Editor</title>
 </head>
 <body>
-  <div id="editor" contenteditable oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''" ></div>
+  <div id="editor" contenteditable spellcheck=false autocorrect="off" autocomplete="off" oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''" ></div>
     <script>
 
        
