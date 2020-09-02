@@ -53,14 +53,18 @@ const editorHTML = `
     </style>
     <title>CN-Editor</title>
 </head>
-<body>
+<body oncopy="return false" oncut="return false" onpaste="return false" >
   <div id="editor" contenteditable spellcheck=false autocorrect="off" autocomplete="off" oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''" ></div>
     <script>
 
        
 
         (function(doc) {
+
+
             var editor = document.getElementById('editor');
+
+
             editor.contentEditable = true;
 
             var lastRange = null
@@ -202,6 +206,7 @@ const editorHTML = `
                 let contentChanged = JSON.stringify({
                     type: 'onChange',
                     data: obj });
+
                 sendMessage(contentChanged);
 
             }, false);
@@ -282,23 +287,25 @@ const editorHTML = `
                                 try {
 
                                     lastRange = value.range
+                               
+
+                                     editor.focus()
+                               if (lastRange) { 
+
+                                 
+                                var sel=window.getSelection(),range=sel.getRangeAt(0);
+                                var x,C,sC=editor,eC=editor;
+
                                 
 
-                                editor.focus()
-                                //lastRange.sO = 1
-                                //lastRange.eO = 1
-                              var sel=window.getSelection(),range=sel.getRangeAt(0);
-                              var x,C,sC=editor,eC=editor;
+                                C=lastRange.sC;x=C.length;while(x--)sC=sC.childNodes[C[x]];
+                                C=lastRange.eC;x=C.length;while(x--)eC=eC.childNodes[C[x]];
 
-                              
-
-                              C=lastRange.sC;x=C.length;while(x--)sC=sC.childNodes[C[x]];
-                              C=lastRange.eC;x=C.length;while(x--)eC=eC.childNodes[C[x]];
-
-                              range.setStart(sC,lastRange.sO);
-                              range.setEnd(eC,lastRange.eO);
-                              sel.removeAllRanges();
-                              sel.addRange(range)
+                                range.setStart(sC,lastRange.sO);
+                                range.setEnd(eC,lastRange.eO);
+                                sel.removeAllRanges();
+                                sel.addRange(range)
+                              }
 
                               //  alert(JSON.stringify(lastRange) + ' ' + value.text)
 
@@ -318,7 +325,7 @@ const editorHTML = `
 
                                 }
                                 catch (error) {
-                                    alert(error.message)
+                                    alert("Editor error " + error.message + ' ' + JSON.stringify(sC) + ' ' + lastRange.sO + ' ' + JSON.stringify(eC) + ' ' + lastRange.eO)
                                 }
                           
 
