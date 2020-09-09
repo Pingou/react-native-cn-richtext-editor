@@ -53,7 +53,7 @@ const editorHTML = `
     </style>
     <title>CN-Editor</title>
 </head>
-<body oncopy="return false" oncut="return false" onpaste="return false" >
+<body>
   <div id="editor" contenteditable spellcheck=false autocorrect="off" autocomplete="off" oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''" ></div>
     <script>
 
@@ -89,6 +89,55 @@ const editorHTML = `
                 
 
             }
+            document.addEventListener('selectionchange', () => {
+
+
+              var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    var html = "";
+    if (typeof window.getSelection != "undefined") {
+        var sel = window.getSelection();
+        if (sel.rangeCount) {
+            var container = document.createElement("div");
+            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                container.appendChild(sel.getRangeAt(i).cloneContents());
+            }
+            html = container.innerHTML;
+        }
+    } else if (typeof document.selection != "undefined") {
+        if (document.selection.type == "Text") {
+            html = document.selection.createRange().htmlText;
+        }
+    }
+ 
+    if (html.indexOf("<span") != -1) {
+      if (window.getSelection) {
+  if (window.getSelection().empty) {  // Chrome
+    window.getSelection().empty();
+  } else if (window.getSelection().removeAllRanges) {  // Firefox
+    window.getSelection().removeAllRanges();
+  }
+}
+  
+
+    }
+
+               
+});
+
+            editor.addEventListener("paste", function(e) {
+              // cancel paste
+              e.preventDefault();
+
+              // get text representation of clipboard
+              var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+
+              // insert text manually
+              document.execCommand("insertHTML", false, text);
+          });
+
+
 
              var getNodeIndex = function(n){var i=0;while(n=n.previousSibling)i++;return i}
 
